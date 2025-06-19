@@ -17,15 +17,22 @@
 
 //No 2.
 function findMax(arr) {
-    if (typeof arr !== 'number') {
-        console.log('Data wajib angka');
+    if (!Array.isArray(arr)) {
+        console.log('Data wajib array');
         return false;
     }
+
+    if (!arr.every(item => typeof item === 'number')) { 
+        console.log('Data wajib number');
+        return false;
+    }
+
     return arr.reduce((largest, current) => //reduce adalah alat bantu yang membandingkan isi array satu per satu, lalu menyimpan satu nilai akhir.
         (current > largest ? current : largest), arr[0]);
 }
 
-console.log(findMax([1, 2, 3, 4, 5]));
+
+console.log(findMax([17, 10, 28, 35, 5]));
 // kasih penjelasan reduce buat apa, bikin validasi array, yang masuk dalam perhitungan hanya integer
 
 //No 3.
