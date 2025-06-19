@@ -1,12 +1,19 @@
 // No 1.
-// function isPalindrome (str) {
+// function isPalindrome(str) {
+//     if (typeof str !== 'string') 
+//         {console.log ('Data wajib string');
+//         return false;}
+
 //     const cleaned = str.toLowerCase().replace(/[\W_]/g, '');
 //     const reversed = cleaned.split('').reverse().join('');
+//     console.log(reversed);
+//     console.log(cleaned);
 //     return cleaned === reversed;
 // }
 
-// console.log(isAdvancedPalindrome('No Lemon, No Melon'));  // Output: true
-// console.log(isAdvancedPalindrome('No apple, no apple'));  // Output: false
+// console.log(isPalindrome('No Lemon, No Melon'));  // Output: true
+// console.log(isPalindrome(1));  // Output: false
+// validasi data wajib string
 
 //No 2.
 // function findMax(arr) {
@@ -14,23 +21,29 @@
 //         (current > largest ? current : largest), arr[0]);
 // }
 
-// console.log(findMax([10, 25, 17, 99, 3]));
+// console.log(findMax(["hik", "n", "Nugie", "99", "3"]));
+//kasih penjelasan reduce buat apa, bikin validasi array, yang masuk dalam perhitungan hanya integer
 
 //No 3.
 // function fizzBuzz(n) {
-//   for (let i = 1; i <= n; i++) {
-//     let output = '';
+//     if (typeof n !== 'number') {
+//         console.log('Data wajib number');
+//         return false;
+//     }
+//     for (let i = 1; i <= n; i++) {
+//         let output = '';
 
-//     if (i % 3 === 0) output += 'Fizz';
-//     if (i % 5 === 0) output += 'Buzz';
+//         if (i % 3 === 0) output += 'Fizz';
+//         if (i % 5 === 0) output += 'Buzz';
 
-//     if (output === '') output = i;
+//         if (output === '') output = i;
 
-//     console.log(output);
-//   }
+//         console.log(output);
+//     }
 // }
 
 // fizzBuzz(15);
+//datanya harus number, validasi
 
 // No 4.
 // function reverseString(str){
@@ -41,10 +54,14 @@
 //   return reverse;
 // }
 
-// console.log(reverseString("javascript"));
+// console.log(reverseString([1,2,3,4]));
 
-//No 5.
+// //No 5.
 function factorial(n) {
+    if (typeof n !== 'number') {
+        console.log('Data wajib number');
+        return false;
+    }
     let res = 1;
     for (let i = 1; i <= n; i++) {
         res *= i;
@@ -53,3 +70,8 @@ function factorial(n) {
 }
 
 console.log(factorial(5));
+//Pertama, mari kita memahami apa itu faktorial. Dalam matematika, faktorial dari sebuah bilangan bulat non-negatif n, 
+//yang ditulis sebagai n!, adalah hasil perkalian dari semua bilangan bulat positif kurang dari atau sama dengan n. 
+//Misalnya, faktorial dari 5 (ditulis sebagai 5!) adalah 5 x 4 x 3 x 2 x 1, yang hasilnya adalah 120.
+//-----
+// datanya harus number, validasi, kasih penjelasan tentang apa itu factorial, bikin validasi jika datanya bukan number, 
